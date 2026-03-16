@@ -1,16 +1,12 @@
-interface Props{
-  params:{vid:string}
-}
-
 const venueData = new Map([
   ["001",{name:"The Bloom Pavilion",img:"/img/bloom.jpg"}],
   ["002",{name:"Spark Space",img:"/img/sparkspace.jpg"}],
   ["003",{name:"The Grand Table",img:"/img/grandtable.jpg"}]
 ]);
 
-export default function VenueDetail({params}:Props){
+export default function VenueDetail({params}:{params:{vid:string}}){
 
-  const venue = venueData.get(params?.vid ?? "001")
+  const venue = venueData.get(params.vid) ?? venueData.get("001")
 
   return(
     <div>
