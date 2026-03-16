@@ -4,9 +4,15 @@ const venueData = new Map([
   ["003",{name:"The Grand Table",img:"/img/grandtable.jpg"}]
 ]);
 
-export default function VenueDetail({params}:{params:{vid:string}}){
+export default async function VenueDetail({
+  params
+}:{
+  params: Promise<{ vid: string }>
+}){
 
-  const venue = venueData.get(params.vid) ?? venueData.get("001")
+  const { vid } = await params
+
+  const venue = venueData.get(vid) ?? venueData.get("001")
 
   return(
     <div>
