@@ -1,10 +1,9 @@
-import Banner from "@/components/Banner";
 import CardPanel from "@/components/CardPanel";
 
-export default function Home() {
+export default function VenuePage() {
   return (
     <div>
-      <Banner />
+      <h1>Venue List</h1>
       <CardPanel />
     </div>
   );
